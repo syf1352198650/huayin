@@ -1,0 +1,33 @@
+{
+  "name": "huayin-ssr-main",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "ajv": "^8.6.3",
+    "axios": "^0.24.0",
+    "babel-plugin-component": "^1.1.1",
+    "compression-webpack-plugin": "^6.1.1",
+    "core-js": "^3.19.3",
+    "element-ui": "^2.15.6",
+    "nuxt": "^2.15.8",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue": "^2.6.14",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^4.46.0"
+  },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": 3000
+    }
+  },
+  "devDependencies": {}
+}
