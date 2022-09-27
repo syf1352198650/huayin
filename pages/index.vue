@@ -4,7 +4,7 @@
     <BaseCarousel :imgList="this.imgList"></BaseCarousel>
     <!-- 公司介绍栏 -->
     <BaseTitleBox title="公司介绍"></BaseTitleBox>
-    <TheHomeCompanyIntroBar></TheHomeCompanyIntroBar><br />
+    <TheHomeCompanyIntroBar :subText="this.theHomeCompanyIntroBar.subText" :msg="this.theHomeCompanyIntroBar.msg" ></TheHomeCompanyIntroBar><br />
     <!-- 广告图 -->
     <div style="display: flex; justify-content: center; align-items: center">
       <img src="@/assets/33.webp" alt="" style="height: 100%; width: 100%; max-height: 120px" />
@@ -20,6 +20,7 @@
 
 <script>
 // import axios from "@/plugins/axios";
+import {theHomeCompanyIntroBar} from "../msgData/index"
 import { getdata } from "~/api";
 import BaseCarousel from "@/components/BaseCarousel.vue";
 import BaseTitleBox from "@/components/BaseTitleBox.vue";
@@ -36,9 +37,11 @@ export default {
     },
   data() {
     return {
+      theHomeCompanyIntroBar:theHomeCompanyIntroBar,
       imgList: imgList
     };
-  },
+  }
+,
   components: {
     BaseCarousel,
     BaseTitleBox,

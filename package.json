@@ -17,6 +17,7 @@
     "core-js": "^3.19.3",
     "element-ui": "^2.15.6",
     "nuxt": "^2.15.8",
+    "path": "^0.12.7",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
@@ -28,6 +29,5 @@
       "host": "0.0.0.0",
       "port": 3000
     }
-  },
-  "devDependencies": {}
+  }
 }

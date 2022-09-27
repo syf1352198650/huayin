@@ -21,12 +21,13 @@ export default {
   props:{
  subText:{
   type:String,
-  default:'title',
-  msg:{
+  default:'title'
+
+ },
+ msg:{
     type:String,
     default:'深圳华银'
   }
- }
   },
   data() {
     return {
