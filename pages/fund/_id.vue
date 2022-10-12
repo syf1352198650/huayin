@@ -1,6 +1,7 @@
 <template>
   <div>
     <!-- 基金资讯列表 -->
+    <nuxt></nuxt>
     <div>
       <!-- <el-card id="box-cardx">
         <div class="list-title" slot="header">
@@ -16,6 +17,7 @@
       </el-card> -->
        <el_card :articleList="articleList" :title="['基金咨询','Fund Information']" :baseUrl="'/fund/fundlist/'"></el_card>
       <!-- 分页导航 -->
+     
       <div class="control-center">
         <el-pagination
           background
@@ -27,7 +29,10 @@
           :total="400"
         >
         </el-pagination>
+       
+
       </div>
+      
     </div>
   </div>
 </template>
@@ -45,15 +50,15 @@ export default {
       queryInfo: {
         title: "",
         type: "基金报告",
-        pagenum: parseInt(this.$route.path.replace("/fund/", "")),
+        pagenum:1,
         pagesize: "15",
       },
     };
   },
   watch: {
     $route(to, from) {
-      if (to.path.replace("/fund/", "") != this.queryInfo.pagenum) {
-        this.queryInfo.pagenum = to.path.replace("/fund/", "");
+      if (parseInt(to.params.id) != this.queryInfo.pagenum) {
+        this.queryInfo.pagenum = parseInt(to.params.id)||1;
         this.getArticleList();
       }
     },
@@ -61,6 +66,7 @@ export default {
 
   created() {
     this.getArticleList();
+    this.pagenum=this.$route.params.id||1
   },
 
   methods: {

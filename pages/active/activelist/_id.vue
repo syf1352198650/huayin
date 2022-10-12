@@ -2,13 +2,14 @@
   <div>
     <img src="@/assets/22.webp" style="height: 350px; width: 100%" alt="" />
     <!-- 面包屑导航 -->
-    <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb1">
+    <!-- <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb1">
       <el-breadcrumb-item :to="{ path: '/main' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/active/1' }"
         >公司动态</el-breadcrumb-item
       >
       <el-breadcrumb-item>动态详情</el-breadcrumb-item>
-    </el-breadcrumb>
+    </el-breadcrumb> -->
+    <Breadcrumb :lists="lists"></Breadcrumb>
     <!-- 内容详情 -->
     <BaseContentBox></BaseContentBox>
   </div>
@@ -17,11 +18,25 @@
 <script>
 // import "@/plugins/axios";
 import BaseContentBox from "@/components/BaseContentBox.vue";
-
+import Breadcrumb from "@/components/breadcrumb.vue"
 export default {
   components: {
     BaseContentBox,
+    Breadcrumb
+},
+  data(){
+    return{
+      lists:[]
+    }
   },
+  methods:{
+    getRouter(){
+      this.lists=this.$route.matched.filter(v=>v.meta&&v.meta.title)
+    }
+  },
+  created(){
+    this.getRouter()
+  }
 };
 </script>
 

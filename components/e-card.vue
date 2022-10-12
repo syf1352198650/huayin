@@ -13,7 +13,8 @@
             class="text item"
           >
             <router-link :to="baseUrl + item.id" id="text"
-              ><a href="#">{{ item.title }}</a></router-link
+              >
+              <a href="#">{{ item.title }}</a></router-link
             >
             <hr />
           </div>

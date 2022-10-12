@@ -1,6 +1,7 @@
 <template>
   <div>
     <!-- 公司动态列表 -->
+    <nuxt></nuxt>
     <div>
      <el_card :articleList="articleList" :title="['公司动态','Company Trade']" :baseUrl="'/active/activelist/'"></el_card>
       <!-- 分页导航 -->
@@ -15,8 +16,10 @@
           :background="true"
         >
         </el-pagination>
+      
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -33,21 +36,24 @@ export default {
       queryInfo: {
         title: "",
         type: "新闻中心",
-        pagenum: parseInt(this.$route.path.replace("/active/", "")),
+        pagenum: 1,
         pagesize: 15,
       },
     };
   },
   watch: {
     $route(to, from) {
-      if (to.path.replace("/active/", "") != this.queryInfo.pagenum) {
-        this.queryInfo.pagenum = to.path.replace("/active/", "");
+      // console.log("sdsdsds",to);
+      if (parseInt(to.params.id) != this.queryInfo.pagenum) {
+        this.queryInfo.pagenum = parseInt(to.params.id)||1;
         this.getArticleList();
       }
     },
   },
   created() {
+    console.log("params",this.$route.params.id);
     this.getArticleList();
+    this.pagenum=parseInt(this.$route.params.id)||1
   },
 
   methods: {
