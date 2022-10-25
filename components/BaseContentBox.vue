@@ -29,8 +29,9 @@ export default {
   methods: {
     async getPath() {
       let id = this.$route.params.id||1;
-      console.log(id);
+      
       const res = await showEditArtial(id)
+      console.log(id);
       this.title = res.data.data[0].title;
       this.msg = res.data.data[0].content;
     },

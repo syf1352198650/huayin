@@ -31,7 +31,10 @@
              articleList:{
                 type:Array,
                 default(){
-                    return {}
+                    return [{
+                      id:1,
+                      title:'默认'
+                    }]
                 }
              },
              baseUrl:{

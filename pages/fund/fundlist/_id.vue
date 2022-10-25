@@ -2,14 +2,15 @@
   <div>
     <img src="@/assets/22.webp" style="height: 350px; width: 100%" alt="" />
     <!-- 面包屑导航 -->
-    <!-- <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb2">
+    <!-- <el-breadcrumb separator-class="el-icon-arrow-right" class="">
       <el-breadcrumb-item :to="{ path: '/main' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/fund/1' }"
         >基金介绍</el-breadcrumb-item
       >
       <el-breadcrumb-item>基金详情</el-breadcrumb-item>
     </el-breadcrumb> -->
-    <Breadcrumb :lists="lists"></Breadcrumb>
+    <div class="breadcrumb2"><Breadcrumb :lists="lists"></Breadcrumb></div>
+    
     <!-- 内容详情 -->
     <BaseContentBox></BaseContentBox>
     
@@ -42,7 +43,7 @@ data(){
 };
 </script>
 
-<style>
+<style scoped>
 .text {
   font-size: 14px;
   color: white;

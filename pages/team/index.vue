@@ -10,7 +10,7 @@
 <script>
 // import "@/plugins/axios";
 import { teamList } from "~/msgData";
-import { getImage } from "~/api";
+// import { getImage } from "~/api";
 import BaseTitleBox from "@/components/BaseTitleBox.vue";
 import TheCompanyTeamPageContent from "@/components/TheCompanyTeamPageContent.vue";
 
@@ -32,14 +32,15 @@ export default {
     };
   },
   created() {
-    this.getImgList();
+    // this.getImgList();
   },
   methods: {
-    async getImgList() {
+    async 
+    () {
       // const img1 = await this.$http.get("/huayin/get-img?name=1-4.webp");
-      const img1=await getImage()
-      this.imgList[0].name = img1.data.data[0].name;
-      this.imgList[0].src = img1.data.data[0].location;
+      // const img1=await getImage()
+      // this.imgList[0].name = img1.data.data[0].name;
+      // this.imgList[0].src = img1.data.data[0].location;
     },
   },
 };

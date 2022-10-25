@@ -3,8 +3,9 @@
       <div>
         <!-- 顶部导航 -->
         <AppHeader />
-        <nuxt />
-        <!-- 底部 -->
+        <KeepAlive> <nuxt />
+        <!-- 底部 --></KeepAlive>
+       
         <AppFooter />
       </div>
     </template>

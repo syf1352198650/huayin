@@ -59,8 +59,8 @@ export default {
     //   },
     // });
     const fundRes= await getdata({
-        title: "",
-        type: "基金报告",
+      
+        category: "基金报告",
         pagenum: 1,
         pagesize: 4,
       })
@@ -73,8 +73,8 @@ export default {
     //   },
     // });
     const fundRes2=await getdata({
-        title: "",
-        type: "基金报告",
+       
+        category: "基金报告",
         pagenum: 2,
         pagesize: 4,
       })
@@ -87,8 +87,8 @@ export default {
     //   },
     // });
     const newsRes=await getdata({
-        title: "",
-        type: "新闻中心",
+      
+        category: "基金报告",
         pagenum: 1,
         pagesize: 2,
       })
@@ -98,6 +98,11 @@ export default {
       fundList2: fundRes2.data.data,
       newsList: newsRes.data.data,
     };
+    // return{
+    //   fundList:[],
+    //   fundList2:[],
+    //   newsList:[]
+    // }
   },
 };
 </script>

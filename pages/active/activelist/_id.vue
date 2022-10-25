@@ -9,7 +9,8 @@
       >
       <el-breadcrumb-item>动态详情</el-breadcrumb-item>
     </el-breadcrumb> -->
-    <Breadcrumb :lists="lists"></Breadcrumb>
+    <div class="breadcrumb1">  <Breadcrumb :lists="lists"></Breadcrumb></div>
+  
     <!-- 内容详情 -->
     <BaseContentBox></BaseContentBox>
   </div>
